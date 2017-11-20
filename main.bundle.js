@@ -197,11 +197,18 @@ var HomeComponent = (function () {
         this.config = { lineNumbers: false, mode: 'text/javascript' };
         this.content = "// Made with <3 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
     };
+    // TODO: Chose between iFrame and img
+    // Create an iFrame and display it in a new window for our user to copy or save
     HomeComponent.prototype.saveSnippet = function () {
         __WEBPACK_IMPORTED_MODULE_7_html2canvas__(document.getElementsByClassName('console'), {
             onrendered: function (canvas) {
-                var img = canvas.toDataURL();
-                window.open(img);
+                var url = canvas.toDataURL();
+                // var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
+                var img = '<img src="' + url + '" style="border:0;"></img>';
+                var x = window.open();
+                x.document.open();
+                x.document.write(img);
+                x.document.close();
             }
         });
     };
