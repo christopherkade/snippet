@@ -32,11 +32,18 @@ function hello() {
 }`
   }
 
+  // TODO: Chose between iFrame and img
+  // Create an iFrame and display it in a new window for our user to copy or save
   saveSnippet() {
     html2canvas(document.getElementsByClassName('console'), {
       onrendered: function(canvas) {
-        var img = canvas.toDataURL()
-        window.open(img);
+        var url = canvas.toDataURL()
+        // var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
+        var img = '<img src="' + url + '" style="border:0;"></img>'
+        var x = window.open();
+        x.document.open();
+        x.document.write(img);
+        x.document.close();
       }
     });
   }
