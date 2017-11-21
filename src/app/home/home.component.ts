@@ -7,6 +7,7 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/http/http'
 import * as html2canvas from "html2canvas"
 import { CodemirrorComponent } from 'ng2-codemirror';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-home',
@@ -44,14 +45,25 @@ function hello() {
         x.document.open();
         x.document.write(img);
         x.document.close();
+
+        // TODO: Maybe try to download the file instead
+        // var blob = new Blob([url], { type: 'application/img' });
+        // var url2 = window.URL.createObjectURL(blob);
+        // window.open(url2);
       }
     });
+  }
+
+  // Used to access the code mirror instance in our testing
+  public get codemirror() {
+    return this.codemirrorComponent;
   }
 
   changeLanguage(language: string) {
     this.selectedLanguage = language;
     this.languageFilter = false;
 
+    console.log(this.codemirrorComponent.instance.options.mode);
     switch (language) {
       case 'Javascript':
         this.codemirrorComponent.instance.setOption('mode', 'text/javascript');
