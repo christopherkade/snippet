@@ -7,7 +7,6 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/http/http'
 import * as html2canvas from "html2canvas"
 import { CodemirrorComponent } from 'ng2-codemirror';
-import 'rxjs/Rx';
 
 @Component({
   selector: 'app-home',
@@ -38,18 +37,13 @@ function hello() {
   saveSnippet() {
     html2canvas(document.getElementsByClassName('console'), {
       onrendered: function(canvas) {
-        var url = canvas.toDataURL()
+        var url = canvas.toDataURL();
         // var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
         var img = '<img src="' + url + '" style="border:0;"></img>'
         var x = window.open();
         x.document.open();
         x.document.write(img);
         x.document.close();
-
-        // TODO: Maybe try to download the file instead
-        // var blob = new Blob([url], { type: 'application/img' });
-        // var url2 = window.URL.createObjectURL(blob);
-        // window.open(url2);
       }
     });
   }
@@ -63,7 +57,6 @@ function hello() {
     this.selectedLanguage = language;
     this.languageFilter = false;
 
-    console.log(this.codemirrorComponent.instance.options.mode);
     switch (language) {
       case 'Javascript':
         this.codemirrorComponent.instance.setOption('mode', 'text/javascript');
