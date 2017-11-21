@@ -1,6 +1,6 @@
 # Elegant Code Snippets
 
-http://snippet.christopherkade.com
+https://snippet.christopherkade.com
 
 Easily generate code snippets that are nice to look at.
 
