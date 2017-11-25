@@ -57,7 +57,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'app';
     }
     return AppComponent;
 }());
@@ -153,22 +152,24 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_codemirror_mode_javascript_javascript__ = __webpack_require__("../../../../codemirror/mode/javascript/javascript.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_codemirror_mode_javascript_javascript___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_codemirror_mode_javascript_javascript__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_codemirror_mode_css_css__ = __webpack_require__("../../../../codemirror/mode/css/css.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_codemirror_mode_css_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_codemirror_mode_css_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_crystal_crystal__ = __webpack_require__("../../../../codemirror/mode/crystal/crystal.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_crystal_crystal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_codemirror_mode_crystal_crystal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_python_python__ = __webpack_require__("../../../../codemirror/mode/python/python.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_python_python___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_codemirror_mode_python_python__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_xml_xml__ = __webpack_require__("../../../../codemirror/mode/xml/xml.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_xml_xml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_codemirror_mode_xml_xml__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_http_http__ = __webpack_require__("../../../../codemirror/mode/http/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_http_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_codemirror_mode_http_http__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_html2canvas__ = __webpack_require__("../../../../html2canvas/dist/html2canvas.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_html2canvas__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_codemirror__ = __webpack_require__("../../../../ng2-codemirror/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_codemirror___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_ng2_codemirror__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__ = __webpack_require__("../../../../ng2-codemirror/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_html2canvas__ = __webpack_require__("../../../../html2canvas/dist/html2canvas.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_html2canvas__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_javascript_javascript__ = __webpack_require__("../../../../codemirror/mode/javascript/javascript.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_javascript_javascript___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_codemirror_mode_javascript_javascript__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_css_css__ = __webpack_require__("../../../../codemirror/mode/css/css.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_css_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_codemirror_mode_css_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_crystal_crystal__ = __webpack_require__("../../../../codemirror/mode/crystal/crystal.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_crystal_crystal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_codemirror_mode_crystal_crystal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_python_python__ = __webpack_require__("../../../../codemirror/mode/python/python.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_python_python___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_codemirror_mode_python_python__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_codemirror_mode_xml_xml__ = __webpack_require__("../../../../codemirror/mode/xml/xml.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_codemirror_mode_xml_xml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_codemirror_mode_xml_xml__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http__ = __webpack_require__("../../../../codemirror/mode/http/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx__ = __webpack_require__("../../../../codemirror/mode/jsx/jsx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -187,9 +188,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = (function () {
     function HomeComponent() {
-        this.languages = ['Javascript', 'HTML', 'CSS', 'Crystal', 'Python'];
+        this.languages = ['Javascript', 'JSX', 'HTML', 'CSS', 'Crystal', 'Python'];
         this.selectedLanguage = this.languages[0];
         this.languageFilter = false;
     }
@@ -197,13 +199,11 @@ var HomeComponent = (function () {
         this.config = { lineNumbers: false, mode: 'text/javascript' };
         this.content = "// Made with <3 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
     };
-    // TODO: Chose between iFrame and img
-    // Create an iFrame and display it in a new window for our user to copy or save
+    // Create an img and display it in a new window for our user to copy or save
     HomeComponent.prototype.saveSnippet = function () {
-        __WEBPACK_IMPORTED_MODULE_7_html2canvas__(document.getElementsByClassName('console'), {
+        __WEBPACK_IMPORTED_MODULE_2_html2canvas__(document.getElementsByClassName('console'), {
             onrendered: function (canvas) {
                 var url = canvas.toDataURL();
-                // var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
                 var img = '<img src="' + url + '" style="border:0;"></img>';
                 var x = window.open();
                 x.document.open();
@@ -212,12 +212,23 @@ var HomeComponent = (function () {
             }
         });
     };
+    Object.defineProperty(HomeComponent.prototype, "codemirror", {
+        // Used to access the code mirror instance in our testing
+        get: function () {
+            return this.codemirrorComponent;
+        },
+        enumerable: true,
+        configurable: true
+    });
     HomeComponent.prototype.changeLanguage = function (language) {
         this.selectedLanguage = language;
         this.languageFilter = false;
         switch (language) {
             case 'Javascript':
                 this.codemirrorComponent.instance.setOption('mode', 'text/javascript');
+                break;
+            case 'JSX':
+                this.codemirrorComponent.instance.setOption('mode', 'text/jsx');
                 break;
             case 'HTML':
                 this.codemirrorComponent.instance.setOption('mode', 'text/xml');
@@ -237,8 +248,8 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_8_ng2_codemirror__["CodemirrorComponent"]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_8_ng2_codemirror__["CodemirrorComponent"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8_ng2_codemirror__["CodemirrorComponent"]) === "function" && _a || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__["CodemirrorComponent"]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__["CodemirrorComponent"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__["CodemirrorComponent"]) === "function" && _a || Object)
 ], HomeComponent.prototype, "codemirrorComponent", void 0);
 HomeComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
