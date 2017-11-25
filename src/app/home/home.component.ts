@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { CodemirrorComponent } from 'ng2-codemirror'
+import * as html2canvas from "html2canvas"
+import CodeMirror from 'codemirror'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import 'codemirror/mode/crystal/crystal'
 import 'codemirror/mode/python/python'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/http/http'
-import * as html2canvas from "html2canvas"
-import { CodemirrorComponent } from 'ng2-codemirror';
+import 'codemirror/mode/jsx/jsx'
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,7 @@ export class HomeComponent implements OnInit {
   private codemirrorComponent: CodemirrorComponent;
   config: any;
   content: any;
-  languages = ['Javascript', 'HTML', 'CSS', 'Crystal', 'Python'];
+  languages = ['Javascript', 'JSX', 'HTML', 'CSS', 'Crystal', 'Python'];
   selectedLanguage = this.languages[0];
   languageFilter: boolean = false;
 
@@ -29,16 +31,14 @@ export class HomeComponent implements OnInit {
     this.content = `// Made with <3 by @christopherkade
 function hello() {
   print('Hello World!');
-}`
+}`;
   }
 
-  // TODO: Chose between iFrame and img
-  // Create an iFrame and display it in a new window for our user to copy or save
+  // Create an img and display it in a new window for our user to copy or save
   saveSnippet() {
     html2canvas(document.getElementsByClassName('console'), {
       onrendered: function(canvas) {
         var url = canvas.toDataURL();
-        // var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
         var img = '<img src="' + url + '" style="border:0;"></img>'
         var x = window.open();
         x.document.open();
@@ -60,6 +60,9 @@ function hello() {
     switch (language) {
       case 'Javascript':
         this.codemirrorComponent.instance.setOption('mode', 'text/javascript');
+        break;
+      case 'JSX':
+        this.codemirrorComponent.instance.setOption('mode', 'text/jsx');
         break;
       case 'HTML':
         this.codemirrorComponent.instance.setOption('mode', 'text/xml');
