@@ -105,7 +105,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home\">\n  <h1 class=\"title\">Create & save elegant code snippets</h1>\n\n  <label class=\"label\">Language: </label>\n  <div class=\"dropdown dropdown-type\" [ngClass]=\"{ 'is-active': languageFilter }\">\n    <div class=\"dropdown-trigger\">\n      <button class=\"button\" aria-haspopup=\"true\" aria-controls=\"dropdown-menu\" (click)=\"languageFilter = !languageFilter\">\n    <span>{{selectedLanguage}}</span>\n    <span class=\"icon is-small\">\n      <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n    </span>\n  </button>\n    </div>\n    <div class=\"dropdown-menu\" id=\"dropdown-menu\" role=\"menu\">\n      <div class=\"dropdown-content\">\n        <a class=\"dropdown-item\" *ngFor=\"let language of languages\" (click)=\"changeLanguage(language)\">\n          {{language}}\n        </a>\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"container is-fluid snippet-container\">\n    <h2 class=\"subtitle\">Type your snippet here:</h2>\n\n    <div class=\"console\">\n      <div class=\"console-header\">\n        <div class=\"console-buttons\">\n          <div class=\"console-button button-1\"></div>\n          <div class=\"console-button button-2\"></div>\n          <div class=\"console-button button-3\"></div>\n        </div>\n      </div>\n\n      <div class=\"console-content\">\n        <codemirror [(ngModel)]=\"content\" [config]=\"config\"></codemirror>\n      </div>\n    </div>\n\n\n    <div class=\"buttons has-addons is-centered\">\n      <a class=\"button is-primary save-button is-right\" (click)=\"saveSnippet()\">Save</a>\n    </div>\n  </div>\n</div>\n\n<div class=\"network-notification\" *ngIf=\"!isOnline\">\n  Oops ! You seem to be offline.\n</div>\n"
+module.exports = "<div class=\"home\">\n  <h1 class=\"title\">Create & save elegant code snippets</h1>\n\n  <label class=\"label\">Language: </label>\n  <div class=\"dropdown dropdown-type\" [ngClass]=\"{ 'is-active': languageFilter }\">\n    <div class=\"dropdown-trigger\">\n      <button class=\"button\" aria-haspopup=\"true\" aria-controls=\"dropdown-menu\" (click)=\"languageFilter = !languageFilter\">\n    <span>{{selectedLanguage}}</span>\n    <span class=\"icon is-small\">\n      <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n    </span>\n  </button>\n    </div>\n    <div class=\"dropdown-menu\" id=\"dropdown-menu\" role=\"menu\">\n      <div class=\"dropdown-content\">\n        <a class=\"dropdown-item\" *ngFor=\"let language of languages\" (click)=\"changeLanguage(language)\">\n          {{language}}\n        </a>\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"container is-fluid snippet-container\">\n    <h2 class=\"subtitle\">Type your snippet here:</h2>\n\n    <div class=\"console\">\n      <div class=\"console-header\">\n        <div class=\"console-buttons\">\n          <div class=\"console-button button-1\"></div>\n          <div class=\"console-button button-2\"></div>\n          <div class=\"console-button button-3\"></div>\n        </div>\n      </div>\n\n      <div class=\"console-content\">\n        <codemirror [(ngModel)]=\"content\" [config]=\"config\"></codemirror>\n      </div>\n    </div>\n\n\n    <div class=\"buttons has-addons is-centered\">\n      <a class=\"button is-primary save-button is-right\" (click)=\"saveSnippet()\">Save</a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -176,12 +176,10 @@ var HomeComponent = (function () {
             'CSS', 'Crystal', 'Python'];
         this.selectedLanguage = this.languages[0];
         this.languageFilter = false;
-        this.isOnline = true;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.config = { lineNumbers: false, mode: 'text/javascript' };
         this.content = "// Made with <3 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
-        this.handleOnlineState();
     };
     // Create an img and display it in a new window for our user to copy or save
     HomeComponent.prototype.saveSnippet = function () {
@@ -194,15 +192,6 @@ var HomeComponent = (function () {
                 x.document.write(img);
                 x.document.close();
             }
-        });
-    };
-    HomeComponent.prototype.handleOnlineState = function () {
-        var _this = this;
-        window.addEventListener('offline', function (e) {
-            _this.isOnline = false;
-        });
-        window.addEventListener('online', function (e) {
-            _this.isOnline = true;
         });
     };
     // Sets the right option for the selected language
