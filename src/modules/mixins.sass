@@ -1,0 +1,19 @@
+@mixin phone-sm
+   @media (max-height: #{$screen-sm-height}) and (max-width: #{$screen-sm})
+       @content
+
+@mixin phone
+   @media (max-width: #{$screen-sm})
+       @content
+
+@mixin sm
+   @media (min-width: #{$screen-sm})
+       @content
+
+@mixin md
+   @media (min-width: #{$screen-md})
+       @content
+
+@mixin lg
+   @media (min-width: #{$screen-lg})
+       @content

@@ -1,14 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import ./modules/variables
+@import ./modules/mixins
 
-@import ../node_modules/bulma/sass/utilities/initial-variables
-@import ../node_modules/bulma/sass/utilities/functions
+body, html
+    height: 100%
+    width: 100%
+    background-color: $secondary
 
-$primary: #80cbc4
-$primary-light: #b2fef7
-$primary-dark: #4f9a94
-
-$secondary: #e8eaf6
-$secondary-light: #ffffff
-$secondary-dark: #b6b8c3
-
-@import ~bulma
+@include phone
+    .fork
+        display: none

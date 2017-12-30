@@ -1,9 +1,9 @@
 @import ../../styles
 
 .home
-  height: 100vh
-  padding: 2vh
+  height: auto
   background-color: $secondary
+  padding: 2vh
 
 .save-button
   padding: 20px
@@ -76,3 +76,22 @@
 
   .console
     width: 500px
+
+@include phone
+  .title, .subtitle
+    font-size: 1em
+
+  #console
+    width: 100%
+
+@include sm
+  .title, .subtitle
+    font-size: 1.25em
+
+@include md
+  .title, .subtitle
+    font-size: 1.5em
+
+@include lg
+  .title
+    font-size: 2em
