@@ -222,7 +222,7 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.ngOnInit = function () {
         this.config = { lineNumbers: false, mode: this.selectedLanguage.code };
         this.content =
-            "// Made with <3 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
+            "// Made with \u2764 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
     };
     // Create an img and display it in a new window for our user to copy or save
     HomeComponent.prototype.saveSnippet = function () {
