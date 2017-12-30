@@ -105,7 +105,7 @@ var AppModule = /** @class */ (function () {
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home\">\n  <h1 class=\"title\">Create & save elegant code snippets</h1>\n\n  <label class=\"label\">Language: </label>\n  <div class=\"dropdown dropdown-type\" [ngClass]=\"{ 'is-active': languageFilter }\">\n    <div class=\"dropdown-trigger\">\n      <button class=\"button\" aria-haspopup=\"true\" aria-controls=\"dropdown-menu\" (click)=\"languageFilter = !languageFilter\">\n    <span>{{selectedLanguage}}</span>\n    <span class=\"icon is-small\">\n      <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n    </span>\n  </button>\n    </div>\n    <div class=\"dropdown-menu\" id=\"dropdown-menu\" role=\"menu\">\n      <div class=\"dropdown-content\">\n        <a class=\"dropdown-item\" *ngFor=\"let language of languages\" (click)=\"changeLanguage(language)\">\n          {{language}}\n        </a>\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"container is-fluid snippet-container\">\n    <h2 class=\"subtitle\">Type your snippet here:</h2>\n\n    <div id=\"console\">\n      <div class=\"console-header\">\n        <div class=\"console-buttons\">\n          <div class=\"console-button button-1\"></div>\n          <div class=\"console-button button-2\"></div>\n          <div class=\"console-button button-3\"></div>\n        </div>\n      </div>\n\n      <div class=\"console-content\">\n        <codemirror [(ngModel)]=\"content\" [config]=\"config\"></codemirror>\n      </div>\n    </div>\n\n\n    <div class=\"buttons has-addons is-centered\">\n      <a class=\"button is-primary save-button is-right\" (click)=\"saveSnippet()\">Save</a>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"home\">\n  <h1 class=\"title\">Create & save elegant code snippets</h1>\n  \n  <label class=\"label\">Language: </label>\n  <div class=\"dropdown dropdown-type is-hoverable\">\n    <div class=\"dropdown-trigger\">\n      <button class=\"button\" aria-haspopup=\"true\" aria-controls=\"dropdown-menu\">\n        <span>{{selectedLanguage.name}}</span>\n        <span class=\"icon is-small\">\n          <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n        </span>\n      </button>\n    </div>\n    <div class=\"dropdown-menu\" id=\"dropdown-menu\" role=\"menu\">\n      <div class=\"dropdown-content\">\n        <a class=\"dropdown-item\" *ngFor=\"let language of languages\" (click)=\"changeLanguage(language)\">\n          {{language.name}}          \n        </a>        \n      </div>\n    </div>\n  </div>\n  \n  <div class=\"container is-fluid snippet-container\">\n    <h2 class=\"subtitle\">Type your snippet here:</h2>\n    \n    <div id=\"console\">\n      <div class=\"console-header\">\n        <div class=\"console-buttons\">\n          <div class=\"console-button button-1\"></div>\n          <div class=\"console-button button-2\"></div>\n          <div class=\"console-button button-3\"></div>\n        </div>\n      </div>\n      \n      <div class=\"console-content\">\n        <codemirror [(ngModel)]=\"content\" [config]=\"config\"></codemirror>\n      </div>\n    </div>\n    \n    \n    <div class=\"buttons has-addons is-centered\">\n      <a class=\"button is-primary save-button is-right\" (click)=\"saveSnippet()\">Save</a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -132,27 +132,31 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__ = __webpack_require__("../../../../ng2-codemirror/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__assets_html2canvas_min_js__ = __webpack_require__("../../../../../src/assets/html2canvas.min.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__assets_html2canvas_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__assets_html2canvas_min_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_javascript_javascript__ = __webpack_require__("../../../../codemirror/mode/javascript/javascript.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_javascript_javascript___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_codemirror_mode_javascript_javascript__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_css_css__ = __webpack_require__("../../../../codemirror/mode/css/css.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_css_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_codemirror_mode_css_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_crystal_crystal__ = __webpack_require__("../../../../codemirror/mode/crystal/crystal.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_crystal_crystal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_codemirror_mode_crystal_crystal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_python_python__ = __webpack_require__("../../../../codemirror/mode/python/python.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_python_python___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_codemirror_mode_python_python__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_codemirror_mode_xml_xml__ = __webpack_require__("../../../../codemirror/mode/xml/xml.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_codemirror_mode_xml_xml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_codemirror_mode_xml_xml__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http__ = __webpack_require__("../../../../codemirror/mode/http/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx__ = __webpack_require__("../../../../codemirror/mode/jsx/jsx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_detect_browser__ = __webpack_require__("../../../../detect-browser/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_detect_browser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_detect_browser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_codemirror_mode_javascript_javascript__ = __webpack_require__("../../../../codemirror/mode/javascript/javascript.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_codemirror_mode_javascript_javascript___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_codemirror_mode_javascript_javascript__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_codemirror_mode_css_css__ = __webpack_require__("../../../../codemirror/mode/css/css.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_codemirror_mode_css_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_codemirror_mode_css_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_codemirror_mode_crystal_crystal__ = __webpack_require__("../../../../codemirror/mode/crystal/crystal.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_codemirror_mode_crystal_crystal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_codemirror_mode_crystal_crystal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_python_python__ = __webpack_require__("../../../../codemirror/mode/python/python.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_codemirror_mode_python_python___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_codemirror_mode_python_python__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_xml_xml__ = __webpack_require__("../../../../codemirror/mode/xml/xml.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_codemirror_mode_xml_xml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_codemirror_mode_xml_xml__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_http_http__ = __webpack_require__("../../../../codemirror/mode/http/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_codemirror_mode_http_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_codemirror_mode_http_http__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_jsx_jsx__ = __webpack_require__("../../../../codemirror/mode/jsx/jsx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_codemirror_mode_jsx_jsx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_codemirror_mode_jsx_jsx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_codemirror_mode_ruby_ruby__ = __webpack_require__("../../../../codemirror/mode/ruby/ruby.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_codemirror_mode_ruby_ruby___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_codemirror_mode_ruby_ruby__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_swift_swift__ = __webpack_require__("../../../../codemirror/mode/swift/swift.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_swift_swift___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_codemirror_mode_swift_swift__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_codemirror__ = __webpack_require__("../../../../ng2-codemirror/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_codemirror___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_ng2_codemirror__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__assets_html2canvas_min_js__ = __webpack_require__("../../../../../src/assets/html2canvas.min.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__assets_html2canvas_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__assets_html2canvas_min_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_detect_browser__ = __webpack_require__("../../../../detect-browser/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_detect_browser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_detect_browser__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -173,20 +177,56 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomeComponent = /** @class */ (function () {
     function HomeComponent() {
-        this.languages = ['Javascript', 'JSX', 'HTML',
-            'CSS', 'Crystal', 'Python'];
+        // List of languages supported by Snippet
+        this.languages = [
+            {
+                name: 'Javascript',
+                code: 'text/javascript'
+            },
+            {
+                name: 'JSX',
+                code: 'text/jsx'
+            },
+            {
+                name: 'HTML',
+                code: 'text/xml'
+            },
+            {
+                name: 'CSS',
+                code: 'text/css'
+            },
+            {
+                name: 'Crystal',
+                code: 'text/x-crystal'
+            },
+            {
+                name: 'Python',
+                code: 'text/x-python'
+            },
+            {
+                name: 'Ruby',
+                code: 'text/x-ruby'
+            },
+            {
+                name: 'Swift',
+                code: 'text/x-swift'
+            }
+        ];
+        // Language selected by the user
         this.selectedLanguage = this.languages[0];
-        this.languageFilter = false;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.config = { lineNumbers: false, mode: 'text/javascript' };
-        this.content = "// Made with <3 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
+        this.config = { lineNumbers: false, mode: this.selectedLanguage.code };
+        this.content =
+            "// Made with <3 by @christopherkade\nfunction hello() {\n  print('Hello World!');\n}";
     };
     // Create an img and display it in a new window for our user to copy or save
     HomeComponent.prototype.saveSnippet = function () {
-        var browser = Object(__WEBPACK_IMPORTED_MODULE_10_detect_browser__["detect"])();
+        var browser = Object(__WEBPACK_IMPORTED_MODULE_12_detect_browser__["detect"])();
         var element = document.getElementById('console');
         // Use foreignObjectRendeing only on chrome for better display of the text
         var options = {};
@@ -196,7 +236,8 @@ var HomeComponent = /** @class */ (function () {
                 foreignObjectRendering: true
             };
         }
-        __WEBPACK_IMPORTED_MODULE_2__assets_html2canvas_min_js__(element, options).then(function (canvas) {
+        // Call html2canvas to render the console and display it in a new window
+        __WEBPACK_IMPORTED_MODULE_11__assets_html2canvas_min_js__(element, options).then(function (canvas) {
             var url = canvas.toDataURL();
             var img = '<img src="' + url + '" style="border:0;"></img>';
             var x = window.open();
@@ -208,28 +249,7 @@ var HomeComponent = /** @class */ (function () {
     // Sets the right option for the selected language
     HomeComponent.prototype.changeLanguage = function (language) {
         this.selectedLanguage = language;
-        this.languageFilter = false;
-        switch (language) {
-            case 'Javascript':
-                this.codemirrorComponent.instance.setOption('mode', 'text/javascript');
-                break;
-            case 'JSX':
-                this.codemirrorComponent.instance.setOption('mode', 'text/jsx');
-                break;
-            case 'HTML':
-                this.codemirrorComponent.instance.setOption('mode', 'text/xml');
-                this.codemirrorComponent.instance.setOption('htmlMode', true);
-                break;
-            case 'CSS':
-                this.codemirrorComponent.instance.setOption('mode', 'text/css');
-                break;
-            case 'Crystal':
-                this.codemirrorComponent.instance.setOption('mode', 'text/x-crystal');
-                break;
-            case 'Python':
-                this.codemirrorComponent.instance.setOption('mode', 'text/x-python');
-                break;
-        }
+        this.codemirrorComponent.instance.setOption('mode', language.code);
     };
     Object.defineProperty(HomeComponent.prototype, "codemirror", {
         // Used to access the code mirror instance in our testing
@@ -240,11 +260,11 @@ var HomeComponent = /** @class */ (function () {
         configurable: true
     });
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__["CodemirrorComponent"]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__["CodemirrorComponent"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_codemirror__["CodemirrorComponent"]) === "function" && _a || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_10_ng2_codemirror__["CodemirrorComponent"]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_10_ng2_codemirror__["CodemirrorComponent"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10_ng2_codemirror__["CodemirrorComponent"]) === "function" && _a || Object)
     ], HomeComponent.prototype, "codemirrorComponent", void 0);
     HomeComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_core__["Component"])({
             selector: 'app-home',
             template: __webpack_require__("../../../../../src/app/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/home/home.component.sass")]
