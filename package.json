@@ -9,8 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --env=prod && echo snippet.christopherkade.com >> ./dist/CNAME && angular-cli-ghpages --branch gh-pages"
-      
+    "deploy": "ng build --env=prod --base-href '/snippet/' && angular-cli-ghpages --branch gh-pages"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +49,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.3.3"
+    "typescript": "~2.6.2"
   }
 }
