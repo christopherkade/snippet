@@ -192,6 +192,7 @@ var HomeComponent = /** @class */ (function () {
         var options = {};
         if (browser && browser.name === 'chrome') {
             options = {
+                useCORS: true,
                 foreignObjectRendering: true
             };
         }
