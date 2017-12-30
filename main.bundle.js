@@ -151,6 +151,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_codemirror_mode_http_http__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx__ = __webpack_require__("../../../../codemirror/mode/jsx/jsx.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_codemirror_mode_jsx_jsx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_detect_browser__ = __webpack_require__("../../../../detect-browser/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_detect_browser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_detect_browser__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -160,6 +162,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -183,12 +186,16 @@ var HomeComponent = /** @class */ (function () {
     };
     // Create an img and display it in a new window for our user to copy or save
     HomeComponent.prototype.saveSnippet = function () {
+        var browser = Object(__WEBPACK_IMPORTED_MODULE_10_detect_browser__["detect"])();
         var element = document.getElementById('console');
-        var options = {
-            letterRendering: true
-        };
+        // Use foreignObjectRendeing only on chrome for better display of the text
+        var options = {};
+        if (browser && browser.name === 'chrome') {
+            options = {
+                foreignObjectRendering: true
+            };
+        }
         __WEBPACK_IMPORTED_MODULE_2__assets_html2canvas_min_js__(element, options).then(function (canvas) {
-            // document.body.appendChild(canvas);
             var url = canvas.toDataURL();
             var img = '<img src="' + url + '" style="border:0;"></img>';
             var x = window.open();
@@ -196,16 +203,6 @@ var HomeComponent = /** @class */ (function () {
             x.document.write(img);
             x.document.close();
         });
-        // html2canvas(document.getElementsByClassName('console'), {
-        //   onrendered: function(canvas) {
-        //     var url = canvas.toDataURL();
-        //     var img = '<img src="' + url + '" style="border:0;"></img>'
-        //     var x = window.open();
-        //     x.document.open();
-        //     x.document.write(img);
-        //     x.document.close();
-        //   }
-        // });
     };
     // Sets the right option for the selected language
     HomeComponent.prototype.changeLanguage = function (language) {
