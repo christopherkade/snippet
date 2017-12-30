@@ -1,14 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
-import { CodemirrorComponent } from 'ng2-codemirror'
-import * as html2canvas from '../../assets/html2canvas.min.js'
-import CodeMirror from 'codemirror'
-import 'codemirror/mode/javascript/javascript'
-import 'codemirror/mode/css/css'
-import 'codemirror/mode/crystal/crystal'
-import 'codemirror/mode/python/python'
-import 'codemirror/mode/xml/xml'
-import 'codemirror/mode/http/http'
-import 'codemirror/mode/jsx/jsx'
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CodemirrorComponent } from 'ng2-codemirror';
+import * as html2canvas from '../../assets/html2canvas.min.js';
+import CodeMirror from 'codemirror';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/css/css';
+import 'codemirror/mode/crystal/crystal';
+import 'codemirror/mode/python/python';
+import 'codemirror/mode/xml/xml';
+import 'codemirror/mode/http/http';
+import 'codemirror/mode/jsx/jsx';
+import { detect } from 'detect-browser';
 
 @Component({
   selector: 'app-home',
@@ -37,32 +38,25 @@ function hello() {
   
   // Create an img and display it in a new window for our user to copy or save
   saveSnippet() {
-    let element = document.getElementById('console');
-    const options = {
-      letterRendering: true
-    };
-
-    html2canvas(element, options).then(function(canvas) {      
-      // document.body.appendChild(canvas);
-      
-      var url = canvas.toDataURL();
-      var img = '<img src="' + url + '" style="border:0;"></img>'
-      var x = window.open();
+    const browser = detect();
+    const element = document.getElementById('console');
+    
+    // Use foreignObjectRendeing only on chrome for better display of the text
+    let options = {};
+    if (browser && browser.name === 'chrome') {      
+      options = {
+        foreignObjectRendering: true
+      };  
+    }
+    
+    html2canvas(element, options).then(function(canvas) {
+      const url = canvas.toDataURL();
+      const img = '<img src="' + url + '" style="border:0;"></img>'
+      const x = window.open();
       x.document.open();
       x.document.write(img);
       x.document.close();
     });
-    
-    // html2canvas(document.getElementsByClassName('console'), {
-    //   onrendered: function(canvas) {
-    //     var url = canvas.toDataURL();
-    //     var img = '<img src="' + url + '" style="border:0;"></img>'
-    //     var x = window.open();
-    //     x.document.open();
-    //     x.document.write(img);
-    //     x.document.close();
-    //   }
-    // });
   }
   
   // Sets the right option for the selected language
