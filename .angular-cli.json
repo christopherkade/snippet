@@ -29,8 +29,7 @@
         "../node_modules/codemirror/mode/crystal/crystal.js",
         "../node_modules/codemirror/mode/python/python.js",
         "../node_modules/codemirror/mode/http/http.js",
-        "../node_modules/codemirror/mode/xml/xml.js",
-        "./assets/html2canvas/dist/html2canvas.min.js"
+        "../node_modules/codemirror/mode/xml/xml.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

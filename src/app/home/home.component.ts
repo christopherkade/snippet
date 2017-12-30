@@ -45,6 +45,7 @@ function hello() {
     let options = {};
     if (browser && browser.name === 'chrome') {      
       options = {
+        useCORS: true,
         foreignObjectRendering: true
       };  
     }
