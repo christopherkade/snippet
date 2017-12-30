@@ -1,29 +1,28 @@
 <div class="home">
   <h1 class="title">Create & save elegant code snippets</h1>
-
+  
   <label class="label">Language: </label>
-  <div class="dropdown dropdown-type" [ngClass]="{ 'is-active': languageFilter }">
+  <div class="dropdown dropdown-type is-hoverable">
     <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" (click)="languageFilter = !languageFilter">
-    <span>{{selectedLanguage}}</span>
-    <span class="icon is-small">
-      <i class="fa fa-angle-down" aria-hidden="true"></i>
-    </span>
-  </button>
+      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+        <span>{{selectedLanguage.name}}</span>
+        <span class="icon is-small">
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
     </div>
     <div class="dropdown-menu" id="dropdown-menu" role="menu">
       <div class="dropdown-content">
         <a class="dropdown-item" *ngFor="let language of languages" (click)="changeLanguage(language)">
-          {{language}}
-        </a>
+          {{language.name}}          
+        </a>        
       </div>
     </div>
   </div>
-
-
+  
   <div class="container is-fluid snippet-container">
     <h2 class="subtitle">Type your snippet here:</h2>
-
+    
     <div id="console">
       <div class="console-header">
         <div class="console-buttons">
@@ -32,13 +31,13 @@
           <div class="console-button button-3"></div>
         </div>
       </div>
-
+      
       <div class="console-content">
         <codemirror [(ngModel)]="content" [config]="config"></codemirror>
       </div>
     </div>
-
-
+    
+    
     <div class="buttons has-addons is-centered">
       <a class="button is-primary save-button is-right" (click)="saveSnippet()">Save</a>
     </div>
