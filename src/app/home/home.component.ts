@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.config = { lineNumbers: false, mode: this.selectedLanguage.code };
     this.content = 
-`// Made with <3 by @christopherkade
+`// Made with ❤ by @christopherkade
 function hello() {
   print('Hello World!');
 }`;
